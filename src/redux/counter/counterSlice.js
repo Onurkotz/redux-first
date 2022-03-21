@@ -5,7 +5,18 @@ export const counterSlice = createSlice({
   initialState: {
     value: 0,
   },
-  reducers: {},
+  reducers: {
+    arttır: (state) => {
+      state.value += 1;
+    },
+    eksilt: (state) => {
+      state.value -= 1;
+    },
+    userEnter: (state, action) => {
+      state.value += Number(action.payload)
+    }
+  },
 });
 
+export const { arttır, eksilt,userEnter } = counterSlice.actions;
 export default counterSlice.reducer;
